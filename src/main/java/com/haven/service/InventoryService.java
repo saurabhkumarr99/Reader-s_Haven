@@ -1,0 +1,49 @@
+package com.haven.service;
+
+import com.haven.dao.InventoryRepository;
+import com.haven.model.Inventory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class InventoryService {
+
+    @Autowired
+    private InventoryRepository inventoryRepository;
+
+    // Create an inventory entry
+    public Inventory addToInventory(Inventory inventoryItem) {
+        return inventoryRepository.save(inventoryItem);
+    }
+
+    // Retrieve all inventory entries
+    public List<Inventory> getAllInventory() {
+        return inventoryRepository.findAll();
+    }
+
+    // Retrieve an inventory entry by book ID
+    public Optional<Inventory> getInventoryItemById(int id) {
+        return inventoryRepository.findById(id);
+    }
+
+    // Update an inventory entry
+    public Inventory updateInventoryItem(int id, Inventory updatedInventoryItem) {
+        Optional<Inventory> optionalInventoryItem = inventoryRepository.findById(id);
+
+        if (optionalInventoryItem.isPresent()) {
+
+            return inventoryRepository.save(updatedInventoryItem);
+        } else {
+            // Handle the case where the inventory entry with the given ID is not found
+            return null;
+        }
+    }
+
+    // Delete an inventory entry by book ID
+    public void deleteInventoryItem(int id) {
+        inventoryRepository.deleteById(id);
+    }
+}
