@@ -1,6 +1,7 @@
 package com.haven.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -20,12 +21,21 @@ public class AuthorsService {
 	}
 
 	// Retrieve all authors
+	@Cacheable(key = "'allAuthors'" ,value = "authorList")
 	public List<Authors> getAllAuthors() {
+		System.out.println("DB Called");
 		return authorsRepository.findAll();
 	}
 
-	// Retrieve an author by ID
+	/**
+	 * @author Saurabh Rai
+	 * @apiNote an author by ID , storing data in redis as catch
+	 * @param id
+	 * @return Author
+	 */
+	@Cacheable(key = "#id" ,value = "author")
 	public Optional<Authors> getAuthorById(int id) {
+		System.out.println("DB Called");
 		return authorsRepository.findById(id);
 	}
 

@@ -3,6 +3,7 @@ package com.haven.service;
 import com.haven.dao.InventoryRepository;
 import com.haven.model.Inventory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,11 +21,14 @@ public class InventoryService {
     }
 
     // Retrieve all inventory entries
+    @Cacheable(key = "'inventoryList'" ,value = "allInventory")
     public List<Inventory> getAllInventory() {
+    	System.out.println("DB Called");
         return inventoryRepository.findAll();
     }
 
     // Retrieve an inventory entry by book ID
+    @Cacheable(key = "#id" , value = "inventory")
     public Optional<Inventory> getInventoryItemById(int id) {
         return inventoryRepository.findById(id);
     }

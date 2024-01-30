@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.haven.model.Cart;
 import com.haven.model.Orders;
 
 public interface OrdersRepository extends JpaRepository<Orders, Integer> {

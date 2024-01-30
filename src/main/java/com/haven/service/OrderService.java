@@ -1,9 +1,9 @@
 package com.haven.service;
 
 import com.haven.dao.OrdersRepository;
-import com.haven.model.Cart;
 import com.haven.model.Orders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +21,9 @@ public class OrderService {
 	}
 
 	// Retrieve all orders
+	@Cacheable(key = "'allOrders'" , value = "ordersList")
 	public List<Orders> getAllOrders() {
+		System.out.println("DB Called");
 		return ordersRepository.findAll();
 	}
 
@@ -31,7 +33,9 @@ public class OrderService {
 	}
 
 	// Retrieve all orders entries for a customer
+	@Cacheable(key = "#customer_id",value = "orderList")
 	public List<Orders> getOrdersByCustomerId(String customer_id) {
+		System.out.println("DB Called");
 		return ordersRepository.findByCustomer_id(customer_id);
 	}
 

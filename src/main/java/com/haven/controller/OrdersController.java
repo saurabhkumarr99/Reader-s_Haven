@@ -1,6 +1,5 @@
 package com.haven.controller;
 
-import com.haven.model.Cart;
 import com.haven.model.Orders;
 import com.haven.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;

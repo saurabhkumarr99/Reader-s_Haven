@@ -3,6 +3,7 @@ package com.haven.service;
 import com.haven.dao.BooksRepository;
 import com.haven.model.Books;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +21,9 @@ public class BookService {
     }
 
     // Retrieve all books
+    @Cacheable(key = "'allBooks'",value = "allBooksCache")
     public List<Books> getAllBooks() {
+    	System.out.println("Db called");
         return booksRepository.findAll();
     }
 
@@ -30,7 +33,9 @@ public class BookService {
     }
     
     // Retrieve books by author ID
+    @Cacheable(key = "#authorId" , value = "books")
     public List<Books> getBooksByAuthorId(int authorId) {
+    	System.out.println("DB Called");
         return booksRepository.findByAuthorId(authorId);
     }
 
