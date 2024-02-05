@@ -8,8 +8,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.haven.dao.AuthorsRepository;
-import com.haven.model.Authors;
+import com.haven.postgress.dao.AuthorsRepository;
+import com.haven.postgress.model.Authors;
+import com.haven.postgress.service.AuthorsService;
 
 import java.util.Optional;
 

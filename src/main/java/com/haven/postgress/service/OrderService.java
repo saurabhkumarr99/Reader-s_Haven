@@ -1,7 +1,8 @@
-package com.haven.service;
+package com.haven.postgress.service;
 
-import com.haven.dao.OrdersRepository;
-import com.haven.model.Orders;
+import com.haven.postgress.dao.OrdersRepository;
+import com.haven.postgress.model.Orders;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

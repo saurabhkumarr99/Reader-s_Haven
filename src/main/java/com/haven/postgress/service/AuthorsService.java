@@ -1,4 +1,4 @@
-package com.haven.service;
+package com.haven.postgress.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-import com.haven.dao.AuthorsRepository;
-import com.haven.model.Authors;
+import com.haven.postgress.dao.AuthorsRepository;
+import com.haven.postgress.model.Authors;
 
 @Service
 public class AuthorsService {
@@ -21,7 +21,7 @@ public class AuthorsService {
 	}
 
 	// Retrieve all authors
-	@Cacheable(key = "'allAuthors'" ,value = "authorList")
+	@Cacheable(key = "'allAuthor'" ,value = "authorList")
 	public List<Authors> getAllAuthors() {
 		System.out.println("DB Called");
 		return authorsRepository.findAll();

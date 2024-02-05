@@ -1,8 +1,8 @@
-package com.haven.service;
+package com.haven.postgress.service;
 
-import com.haven.dao.CustomersRepository;
-import com.haven.model.Customers;
-import com.haven.model.LoginRequest;
+import com.haven.postgress.dao.CustomersRepository;
+import com.haven.postgress.model.Customers;
+import com.haven.postgress.model.LoginRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -38,8 +38,8 @@ public class CustomerService {
 
 	// Get user by login request
 	public Optional<Customers> authenticateCustomer(LoginRequest loginRequest) {
-		return Optional.ofNullable(customersRepository.findCustomerByEmailAndPassword(loginRequest.getEmail(),
-				loginRequest.getPassword()));
+		Customers customers =customersRepository.findCustomerByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());	
+		return Optional.ofNullable(customers);
 	}
 
 	// Update a customer

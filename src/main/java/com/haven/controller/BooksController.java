@@ -1,7 +1,8 @@
 package com.haven.controller;
 
-import com.haven.model.Books;
-import com.haven.service.BookService;
+import com.haven.postgress.model.Books;
+import com.haven.postgress.service.BookService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

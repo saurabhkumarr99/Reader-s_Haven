@@ -1,7 +1,8 @@
 package com.haven.controller;
 
-import com.haven.model.Customers;
-import com.haven.service.CustomerService;
+import com.haven.postgress.model.Customers;
+import com.haven.postgress.service.CustomerService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,11 +1,11 @@
-package com.haven.dao;
+package com.haven.postgress.dao;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.haven.model.Books;
+import com.haven.postgress.model.Books;
 
 public interface BooksRepository extends JpaRepository<Books, Integer> {
 

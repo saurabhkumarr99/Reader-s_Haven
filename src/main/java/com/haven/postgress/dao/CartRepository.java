@@ -1,11 +1,11 @@
-package com.haven.dao;
+package com.haven.postgress.dao;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.haven.model.Cart;
+import com.haven.postgress.model.Cart;
 
 public interface CartRepository extends JpaRepository<Cart, Integer> {
 

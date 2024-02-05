@@ -1,10 +1,10 @@
-package com.haven.dao;
+package com.haven.postgress.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.haven.model.Customers;
+import com.haven.postgress.model.Customers;
 
 public interface CustomersRepository extends JpaRepository<Customers, Integer> {
 

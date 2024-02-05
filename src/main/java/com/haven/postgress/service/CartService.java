@@ -1,7 +1,8 @@
-package com.haven.service;
+package com.haven.postgress.service;
 
-import com.haven.dao.CartRepository;
-import com.haven.model.Cart;
+import com.haven.postgress.dao.CartRepository;
+import com.haven.postgress.model.Cart;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

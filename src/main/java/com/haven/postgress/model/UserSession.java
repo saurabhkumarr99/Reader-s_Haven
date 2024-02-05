@@ -1,4 +1,4 @@
-package com.haven.model;
+package com.haven.postgress.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

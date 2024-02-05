@@ -11,8 +11,9 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.concurrent.ConcurrentMapCache;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 
-import com.haven.dao.OrdersRepository;
-import com.haven.model.Orders;
+import com.haven.postgress.dao.OrdersRepository;
+import com.haven.postgress.model.Orders;
+import com.haven.postgress.service.OrderService;
 
 import java.util.Arrays;
 import java.util.List;

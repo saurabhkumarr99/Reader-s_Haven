@@ -1,7 +1,8 @@
 package com.haven.controller;
 
-import com.haven.model.Cart;
-import com.haven.service.CartService;
+import com.haven.postgress.model.Cart;
+import com.haven.postgress.service.CartService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

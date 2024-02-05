@@ -1,7 +1,8 @@
 package com.haven.controller;
 
-import com.haven.model.Authors;
-import com.haven.service.AuthorsService;
+import com.haven.postgress.model.Authors;
+import com.haven.postgress.service.AuthorsService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

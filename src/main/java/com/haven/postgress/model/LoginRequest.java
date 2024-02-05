@@ -1,4 +1,4 @@
-package com.haven.model;
+package com.haven.postgress.model;
 
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,8 @@
-package com.haven.service;
+package com.haven.postgress.service;
 
-import com.haven.dao.InventoryRepository;
-import com.haven.model.Inventory;
+import com.haven.postgress.dao.InventoryRepository;
+import com.haven.postgress.model.Inventory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
