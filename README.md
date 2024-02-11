@@ -40,6 +40,19 @@ The "Readers' Haven" Online Bookstore project aims to enhance the performance an
 
 ## Key Components
 
+### Order Processing Queue
+
+- **Description:** Set up a Kafka message queue to manage order processing asynchronously. When an order is placed, publish the order details to the Kafka queue, allowing for order processing (e.g., payment processing, order confirmation) to occur without blocking the user interface
+
+### Email Notification Queue
+
+- **Description:** Implement a Kafka message queue for managing email notifications, including order confirmations, shipping updates, and promotional emails. Utilize this Kafka queue to handle sending emails in the background, improving response times for user actions.
+
+### Inventory Management Queue
+
+- **Description:** Develop a Kafka message queue for inventory updates. Whenever an order is processed or a restock occurs, publish messages to this Kafka queue to update inventory levels asynchronously, ensuring the front-end displays the most current stock information without direct database writes on each user action.
+
+
 ### Session Management
 
 - Utilize Redis to securely store and manage user session data.
