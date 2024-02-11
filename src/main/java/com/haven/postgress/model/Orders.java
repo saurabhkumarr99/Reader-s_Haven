@@ -13,7 +13,7 @@ import javax.persistence.Id;
 //import jakarta.persistence.Id;
 
 @Entity
-public class Orders implements Serializable{
+public class Orders implements Serializable {
 
 	/**
 	 * 
@@ -25,6 +25,7 @@ public class Orders implements Serializable{
 	private int order_id;
 
 	private String customer_id;
+	private String book_id;
 	private String order_date;
 	private String status;
 
@@ -33,10 +34,11 @@ public class Orders implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Orders(int order_id, String customer_id, String order_date, String status) {
+	public Orders(int order_id, String customer_id, String book_id, String order_date, String status) {
 		super();
 		this.order_id = order_id;
 		this.customer_id = customer_id;
+		this.book_id = book_id;
 		this.order_date = order_date;
 		this.status = status;
 	}
@@ -73,10 +75,18 @@ public class Orders implements Serializable{
 		this.status = status;
 	}
 
+	public String getBook_id() {
+		return book_id;
+	}
+
+	public void setBook_id(String book_id) {
+		this.book_id = book_id;
+	}
+
 	@Override
 	public String toString() {
-		return "orders [order_id=" + order_id + ", customer_id=" + customer_id + ", order_date=" + order_date
-				+ ", status=" + status + "]";
+		return "Orders [order_id=" + order_id + ", customer_id=" + customer_id + ", book_id=" + book_id
+				+ ", order_date=" + order_date + ", status=" + status + "]";
 	}
 
 }

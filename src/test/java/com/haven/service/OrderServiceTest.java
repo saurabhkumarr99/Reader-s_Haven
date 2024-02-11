@@ -38,8 +38,8 @@ public class OrderServiceTest {
     @Test
     public void testGetAllOrders() {
         // Mocking the behavior of the repository
-        Orders order1 = new Orders(1, "2", "2024-01-2 23:16:16", "processed");
-        Orders order2 = new Orders(2, "2", "2024-01-2 23:16:16", "processed");
+        Orders order1 = new Orders(1,"2", "2", "2024-01-2 23:16:16", "processed");
+        Orders order2 = new Orders(2, "2","2", "2024-01-2 23:16:16", "processed");
         when(ordersRepository.findAll()).thenReturn(Arrays.asList(order1, order2));
 
         // Configure a simple cache manager for testing
@@ -60,8 +60,8 @@ public class OrderServiceTest {
     @Test
     public void testGetOrdersByCustomerId() {
         // Mocking the behavior of the repository
-        Orders order1 = new Orders(1, "2", "2024-01-2 23:16:16", "processed");
-        Orders order2 = new Orders(2, "2", "2024-01-2 23:16:16", "processed");
+        Orders order1 = new Orders(1,"2", "2", "2024-01-2 23:16:16", "processed");
+        Orders order2 = new Orders(2,"2", "2", "2024-01-2 23:16:16", "processed");
         when(ordersRepository.findByCustomer_id("2")).thenReturn(Arrays.asList(order1, order2));
 
         // Configure a simple cache manager for testing
@@ -82,7 +82,7 @@ public class OrderServiceTest {
     @Test
     public void testGetOrderById() {
         // Mocking the behavior of the repository
-        Orders order = new Orders(1, "2", "2024-01-2 23:16:16", "processed");
+        Orders order = new Orders(1, "2","5", "2024-01-2 23:16:16", "processed");
         when(ordersRepository.findById(1)).thenReturn(Optional.of(order));
 
         // Configure a simple cache manager for testing
