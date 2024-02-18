@@ -11,4 +11,8 @@ public interface CustomersRepository extends JpaRepository<Customers, Integer> {
 	// Custom query to get customer by email and password
 	@Query("from Customers c where c.email = :email and c.password = :password")
 	Customers findCustomerByEmailAndPassword(@Param("email") String email, @Param("password") String password);
+
+	// Custom query to get customer by email 
+	@Query("from Customers c where c.email = :email")
+	Customers findCustomerByEmail(@Param("email") String email);
 }

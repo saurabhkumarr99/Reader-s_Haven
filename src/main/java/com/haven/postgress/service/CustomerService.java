@@ -36,9 +36,17 @@ public class CustomerService {
 		return customersRepository.findById(id);
 	}
 
+	// Retrieve a customer by email
+	@Cacheable(key = "#id", value = "customer")
+	public Optional<Customers> getCustomerByEmail(String email) {
+		System.out.println("DB Called");
+		return Optional.ofNullable(customersRepository.findCustomerByEmail(email));
+	}
+
 	// Get user by login request
 	public Optional<Customers> authenticateCustomer(LoginRequest loginRequest) {
-		Customers customers =customersRepository.findCustomerByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());	
+		Customers customers = customersRepository.findCustomerByEmailAndPassword(loginRequest.getEmail(),
+				loginRequest.getPassword());
 		return Optional.ofNullable(customers);
 	}
 
